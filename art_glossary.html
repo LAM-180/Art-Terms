@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知っておきたいアート用語集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #333;
+            --accent-color: #4a4a8a;
+            --accent-light: #e8e8f5;
+            --border-color: #ddd;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header-banner {
+            position: relative;
+            width: 100%;
+            height: 28vh; /* Adjusted height */
+            overflow: hidden;
+            text-align: center;
+            line-height: 0;
+        }
+
+        .header-banner::after, .footer-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .header-banner h1 {
+            font-family: 'M PLUS 1 Code', monospace;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            text-shadow: -1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff;
+            z-index: 2;
+            width: 100%;
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+        }
+
+        .main-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            background-color: var(--accent-light);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .kana-index {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .kana-index a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 8px;
+            transition: color 0.3s ease;
+        }
+
+        .kana-index a:hover {
+            color: #000;
+        }
+        
+        .search-box-container {
+            margin: 15px 0;
+        }
+
+        #searchInput {
+            width: 90%;
+            max-width: 450px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #searchInput:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 5px var(--accent-light);
+        }
+
+        .term-quick-links {
+            text-align: center;
+            font-size: 0.8em;
+            line-height: 1.6;
+        }
+
+        .term-quick-links a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 5px;
+            display: inline-block;
+        }
+
+        .term-quick-links a:hover {
+            text-decoration: underline;
+            color: var(--accent-color);
+        }
+
+        main {
+            padding-top: 20px;
+        }
+
+        .kana-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .term-entry {
+            margin-bottom: 40px;
+            padding-left: 15px;
+            border-left: 3px solid var(--accent-light);
+        }
+
+        .term-entry h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .term-entry p {
+            margin: 0 0 15px 0;
+        }
+
+        .external-link-container {
+            text-align: right;
+        }
+
+        .external-link {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .external-link:hover {
+            background-color: #3a3a7a;
+            transform: translateY(-2px);
+        }
+        
+        .footer-banner {
+            position: relative;
+            width: 100%;
+            line-height: 0;
+        }
+
+        .footer-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        footer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            color: #fff;
+            font-size: 1em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            width: 100%;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .header-banner h1 {
+                font-size: 1.8em;
+                text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            }
+            body {
+                font-size: 15px;
+            }
+            .section-title {
+                font-size: 1.8em;
+            }
+            .term-entry h3 {
+                font-size: 1.3em;
+            }
+            .container {
+                padding: 10px;
+            }
+            .main-header {
+                padding: 15px;
+            }
+        }
+
+        .header-link {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .footer-buttons {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+
+        #back-to-list-btn {
+            background-color: #000;
+            color: #fff;
+            padding: 12px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        #back-to-list-btn:hover {
+            opacity: 0.8;
+        }
+
+        #scroll-to-top-btn {
+            position: fixed;
+            display: none; 
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            right: 30px;
+            bottom: 30px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            z-index: 2000;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        #scroll-to-top-btn:hover {
+            opacity: 0.8;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body id="page-top">
+
+    <div class="header-banner">
+        <img src="image/Art-Terms2.jpg" alt="Art Terms Header" class="header-image">
+        <a href="#page-top" class="header-link"><h1>知っておきたいアート用語集</h1></a>
+    </div>
+
+    <header class="main-header">
+        <div class="nav-container">
+            <div class="kana-index">
+                <a href="#a-gyo">あ</a> |
+                <a href="#ka-gyo">か</a> |
+                <a href="#sa-gyo">さ</a> |
+                <a href="#ta-gyo">た</a> |
+                <a href="#na-gyo">な</a> |
+                <a href="#ha-gyo">は</a> |
+                <a href="#ma-gyo">ま</a> |
+                <a href="#ya-gyo">や</a> |
+                <a href="#ra-gyo">ら</a>
+            </div>
+            <div class="search-box-container">
+                <input type="text" id="searchInput" placeholder="用語を検索…">
+            </div>
+            <nav class="term-quick-links">
+                <a href="#chushou-geijutsu">抽象芸術</a>
+                <a href="#chushou-hyogen-shugi">抽象表現主義</a>
+                <a href="#action-painting">アクション・ペインティング</a>
+                <a href="#kuki-enkin-ho">空気遠近法</a>
+                <a href="#bunsekiteki-cubism">分析的キュビスム</a>
+                <a href="#arte-povera">アルテ・ポーヴェラ</a>
+                <a href="#automatism">自動筆記</a>
+                <a href="#collage">コラージュ</a>
+                <a href="#color-field">カラー・フィールド</a>
+                <a href="#conceptual-art">コンセプチュアル・アート</a>
+                <a href="#kosei-shugi">構成主義</a>
+                <a href="#cubism">キュビスム</a>
+                <a href="#dada">ダダ</a>
+                <a href="#der-blaue-reiter">青騎士</a>
+                <a href="#taihai-geijutsu">退廃芸術</a>
+                <a href="#de-stijl">デ・スティル</a>
+                <a href="#ecole-des-beaux-arts">エコール・デ・ボザール</a>
+                <a href="#hyogen-shugi">表現主義</a>
+                <a href="#fauvisme">フォービズム</a>
+                <a href="#found-object">ファウンド・オブジェクト</a>
+                <a href="#mirai-ha">未来派</a>
+                <a href="#graffiti-art">グラフィティ・アート</a>
+                <a href="#installation">インスタレーション</a>
+                <a href="#kinetic-art">キネティック・アート</a>
+                <a href="#land-art">ランド・アート</a>
+                <a href="#mexico-hekiga-undo">メキシコ壁画運動</a>
+                <a href="#minimalism">ミニマリズム</a>
+                <a href="#neoplasticism">ネオプラスティシズム</a>
+                <a href="#performance-art">パフォーマンス・アート</a>
+                <a href="#primitivism">プリミティヴィズム</a>
+                <a href="#readymade">レディ・メイド</a>
+                <a href="#suprematism">シュプレマティスム</a>
+                <a href="#surrealisme">シュールレアリスム</a>
+                <a href="#kyokankaku">共感覚</a>
+                <a href="#sogoteki-cubism">総合的キュビスム</a>
+                <a href="#sogo-shugi">総合主義</a>
+                <a href="#shinchi-gaku">神智学</a>
+                <a href="#yba">YBA</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="a-gyo" class="kana-section">
+                <h2 class="section-title">あ行</h2>
+                <article class="term-entry" id="action-painting">
+                    <h3>アクション・ペインティング</h3>
+                    <p>描く行為を重視し、カンバスに絵具を注いだりなすりつけたりすることによって制作する絵画技法。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%9A%E3%82%A4%E3%83%B3%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="arte-povera">
+                    <h3>アルテ・ポーヴェラ</h3>
+                    <p>イタリア語で「貧しい芸術」を意味する。イタリアの美術家ジェルマーノ・チェラントが、洗練さとは正反対の素朴な素材ではなく、布地、セメント、石炭などの日常の素材を使用して作ったアートを指して用いるようになった。主に1960年代〜1970年代にイタリアのアーティストが取り組んだ。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%83%86%E3%83%BB%E3%83%9D%E3%83%BC%E3%83%B4%E3%82%A7%E3%83%A9" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="automatism">
+                    <h3>自動筆記（オートマティスム）</h3>
+                    <p>偶然や自由な連想、抑制された衝動、夢、トランス状態によって絵を描いたり、文を書きいたりする手法。潜在意識によってアートを制作する手段として、シュールレアリスムと抽象表現主義において熱狂的に用いられた。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%86%E3%82%A3%E3%82%B9%E3%83%A0" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="installation">
+                    <h3>インスタレーション</h3>
+                    <p>20世紀後半から、環境全体を制作することに取り組むアーティストが出現し、こうした作品がインスタレーションと呼ばれるようになった。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="ecole-des-beaux-arts">
+                    <h3>エコール・デ・ボザール</h3>
+                    <p>1848年にパリに創設し、長年にわたってフランスで最も権威のあるとされている美術学校。ドガ、ドラクロワ、モネ、スーラなどフランスを代表するアーティストの多くがここで学んでいる。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%B3%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%87%E3%83%BB%E3%83%9C%E3%82%B6%E3%83%BC%E3%83%AB" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+            </section>
+
+            <section id="ka-gyo" class="kana-section">
+                <h2 class="section-title">か行</h2>
+                <article class="term-entry" id="kuki-enkin-ho">
+                    <h3>空気遠近法</h3>
+                    <p>二次元の作品で、遠くにあるものほど全体にぼかし、多くの場合は描かれなかったり色合いにしたりディテールを省いたりすることで、空間の奥行きを表現する技法。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E7%A9%BA%E6%B0%97%E9%81%A0%E8%BF%91%E6%B3%95" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="collage">
+                    <h3>コラージュ</h3>
+                    <p>新聞雑誌の切り抜きや写真などの素材を寄せ集めて平面に貼る絵画技法。ピカソやブラックが分析的キュビスムにより、ファインアートの分野に初めて本格的に導入された。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%A9%E3%83%BC%E3%82%B8%E3%83%A5" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="color-field">
+                    <h3>カラー・フィールド</h3>
+                    <p>1950年代のマーク・ロスコや1960年代のヘレン・フランケンサーラーなど、抽象表現主義の一部に見られた絵画のスタイルを説明するために用いられた用語。単色の絵具で表面の広い部分を塗りつぶした絵画が典型的である。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%A9%E3%83%BC%E3%83%BB%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="conceptual-art">
+                    <h3>コンセプチュアル・アート</h3>
+                    <p>1960年代に出現した、作品の基礎となるアーティストの考えを最も重要な要素とするアートを指す。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%97%E3%83%81%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%BB%E3%82%A2%E3%83%BC%E3%83%88" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="kosei-shugi">
+                    <h3>構成主義</h3>
+                    <p>1919年頃にロシアで始まった芸術運動で、1920年代にヨーロッパ全体に広がった。ガラス、金属、プラスティックなどの工業素材を用いて抽象作品を作る。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%AD%E3%82%B7%E3%82%A2%E構成%E4%B8%BB%E7%BE%A9" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="cubism">
+                    <h3>キュビスム</h3>
+                    <p>ピカソとブラックが創始した革新的な絵画のスタイルで、1907年〜1914年に発展し、ヨーロッパで大きな影響を与えた。固定された視点から描くという考え方を放棄し、対象が断片になっているかのように描く。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%A5%E3%83%93%E3%82%B9%E3%83%A0" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="graffiti-art">
+                    <h3>グラフィティ・アート</h3>
+                    <p>1970年代半ばにニューヨークで出現した現象。ジャン＝ミシェル・バスキアをはじめとするティーンエイジャーたちがスプレーペンキを使用して街の壁や地下鉄構内に制作したグラフィティ（落書き）から発展し、現代アートのメインストリームに入り込んだ。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%83%86%E3%82%A3" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="kinetic-art">
+                    <h3>キネティック・アート</h3>
+                    <p>「キネティック」は運動に関連していることを意味する。1950年代から実際に動く作品を制作するアーティストが出現した。アレクサンダー・カルダー（1898〜1976）は、空気の流れの効果を利用するモビールを制作した。またオプ・アートのアーティストは、錯覚によって動いているように見える絵画を描いた。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%8D%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%82%A2%E3%83%BC%E3%83%88" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="kyokankaku">
+                    <h3>共感覚</h3>
+                    <p>色をかいだり味わったりするなど、複数の異なる感覚が共同で起きる現象で、体験する人は少なくない。たとえばカンディンスキーは共感覚の持ち主で、音を聞いたり言葉を読んだりしたときに心の中で色が「見えた」ことが知られている。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E5%85%B1%E6%84%9F%E8%A6%9A" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+            </section>
+
+            <section id="sa-gyo" class="kana-section">
+                <h2 class="section-title">さ行</h2>
+                <article class="term-entry" id="suprematism">
+                    <h3>シュプレマティスム</h3>
+                    <p>1913年にロシアの画家カジミール・マレーヴィチが提唱して始まった抽象芸術運動。シュプレマティスムの絵画は、限られた色づかいと、正方形、円、十字などの単純で幾何学的な形を特徴とする。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A5%E3%83%97%E3%83%AC%E3%83%9E%E3%83%86%E3%82%A3%E3%82%B9%E3%83%A0" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="surrealisme">
+                    <h3>シュールレアリスム</h3>
+                    <p>1924年パリで始まった芸術・文学運動で、無意識の精神に関するフロイトの理論から生まれた。偶然や無意識の精神、夢に注目し、奇妙で非論理的な世界を追求した。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A5%E3%83%AB%E3%83%AC%E3%82%A2%E3%83%AA%E3%82%B9%E3%83%A0" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="der-blaue-reiter">
+                    <h3>青騎士（デア・ブラウエ・ライター）</h3>
+                    <p>1911年、近代の世界への幻滅と批判を共有するミュンヘンの先進的なアーティストたちが結成したグループ。「ブリュッケ」ともにドイツ表現主義のグループだが、抽象への取り組みと、アートの精神的価値を重視することが特徴。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E9%9D%92%E9%A8%8E%E5%A3%AB" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="sogoteki-cubism">
+                    <h3>総合的キュビスム</h3>
+                    <p>一般的に1912年〜1914年頃に実践されたとされ、分析的キュビスムに比べてより単純な形と明るい色を特徴とする。一方、コラージュによって豊かなテクスチャーを取り入れる試みもなされた。</p>
+                    <p class="external-link-container"><a href="https://www.artpedia.asia/synthetic-cubism/" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="sogo-shugi">
+                    <h3>総合主義</h3>
+                    <p>ゴーギャンやエミール・ベルナールら、フランスのブルターニュ地方ポン＝タヴェンで制作を行ったポン＝タヴァン派のアーティストたちが使用した用語。観察された通りの現実ではなく、アーティストの感情と主題の総合を表現することを目指した。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E7%B7%8F%E5%90%88%E4%B8%BB%E7%BE%A9" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+            </section>
+
+            <section id="ta-gyo" class="kana-section">
+                <h2 class="section-title">た行</h2>
+                <article class="term-entry" id="chushou-geijutsu">
+                    <h3>抽象芸術</h3>
+                    <p>現実にある物の外観を模倣するのではなく、形、色および線などで構成されるアートを指す。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E8%8A%B8%E8%A1%93" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="chushou-hyogen-shugi">
+                    <h3>抽象表現主義</h3>
+                    <p>第二次世界大戦後アメリカで起きた芸術運動で、表現の自由への強い欲望に基づき、絵具を全身に散りばめたアクション・ペインティングの大型作品にみられるように、激しい感情表現を特徴とする。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E6%8A%BD%E8%B1%A1%E8%A1%A8%E7%8F%BE%E4%B8%BB%E7%BE%A9" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="dada">
+                    <h3>ダダ</h3>
+                    <p>第一次世界大戦の恐怖に対する反応として、1916年にスイスで始まった「反芸術」運動。アートの既成概念を覆し、レディ・メイドを導入したこと、またアーティストの技巧を重視する考え方を排したことで知られるようになった。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%80%E3%82%A4%E3%82%B9%E3%83%A0" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="taihai-geijutsu">
+                    <h3>退廃芸術</h3>
+                    <p>アドルフ・ヒットラーとドイツのナチ党は、承認できない芸術作品に「退廃芸術」のレッテルを貼った。「展覧会」に分類されたアーティストは、展覧会にむことや、作品を展示・販売することを禁じられた。ナチスはこれらの作品の多くを略奪し、大衆に嘲笑させるために「退廃芸術展」で展示した。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E9%80%80%E5%BB%83%E8%8A%B8%E8%A1%93" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="de-stijl">
+                    <h3>デ・スティル</h3>
+                    <p>オランダ語で「ザ・スタイル」を意味し、1917年〜1932年にテオ・ファン・ドゥースブルフの出版物によってオランダで刊行された美術雑誌のタイトルである。同誌は共同創設者であるピエト・モンドリアンの作品とネオプラスティシズム（新造形主義）の考えを広め、「デ・スティル」は、ネオプラスティシズムの独自性を指す用語としても用いられるようになった。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%BB%E3%82%B9%E3%83%86%E3%82%A4%E3%83%AB" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="shinchi-gaku">
+                    <h3>神智学</h3>
+                    <p>19世紀後半に出現したスピリチュアリティに関する教義。モンドリアンやヒルマ・アフ・クリントら一部の画家が神智学に傾倒し、現実の表現ではなくスピリチュアルな知見を目指すアートを希求した。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E7%A5%9E%E6%99%BA%E5%AD%A6" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+            </section>
+
+            <section id="na-gyo" class="kana-section">
+                <h2 class="section-title">な行</h2>
+                <article class="term-entry" id="neoplasticism">
+                    <h3>ネオプラスティシズム（新造形主義）</h3>
+                    <p>ピエト・モンドリアンが1916年に発見した創造。アートによって「普遍的な調和」を見出し、再現するために、アートは具体的であるべきであるというモンドリアンの理論を指す。モンドリアンの絵画は、限定された色づかいと、水平線と垂直線を用いた構成を特徴とする。</p>
+                    <p class="external-link-container"><a href="https://artscape.jp/artword/index.php/%E6%96%B0%E9%80%A0%E5%BD%A2%E4%B8%BB%E7%BE%A9" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+            </section>
+
+            <section id="ha-gyo" class="kana-section">
+                <h2 class="section-title">は行</h2>
+                <article class="term-entry" id="bunsekiteki-cubism">
+                    <h3>分析的キュビスム</h3>
+                    <p>1908年〜1912年頃、断片的な視覚の錯乱に基づき、整合の合う平面によって展開していた時代のキュビスムを指す。キュビスムの思想に区別するため、のちの美術史家がこのように名づけた。主題と混淆された色彩だが、分析的（断片的）な構成で表現される。</p>
+                    <p class="external-link-container"><a href="https://www.artpedia.asia/analytical-cubism/" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="hyogen-shugi">
+                    <h3>表現主義</h3>
+                    <p>20世紀初頭に出現したアートのスタイルを指す用語。色、空間、スケール、形をゆがめ、感情を激しく表現することを特徴とする。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E8%A1%A8%E7%8F%BE%E4%B8%BB%E7%BE%A9" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="fauvisme">
+                    <h3>フォービズム（野獣派）</h3>
+                    <p>フランス語で「野獣」を意味する「フォーヴ」に由来する。1905年フランスで登場し、1910年まで続いた芸術運動。荒々しい筆づかい、明るい色彩、ときに現実をゆがめた表現や平面的な描写を特徴とする。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A9%E3%83%BC%E3%83%B4%E3%82%A3%E3%82%B9%E3%83%A0" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="found-object">
+                    <h3>ファウンド・オブジェクト</h3>
+                    <p>「見つかった物」を意味する、アートの素材として転用される自然または人工の物。あるいはアーティストの購入物を指す。（レディ・メイドも参照）</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A6%E3%83%B3%E3%83%89%E3%83%BB%E3%82%A2%E3%83%96%E3%82%B8%E3%82%A7" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="performance-art">
+                    <h3>パフォーマンス・アート</h3>
+                    <p>アーティスト自らが参加するアート作品。多くの場合、音楽、演劇、ビジュアルアートの要素を組み合わせる。初期は、または即興的に行われ、ライブで起こることやその場などの記録が発表されることもある。1960年代に盛んになった。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%BC%E3%83%88" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="primitivism">
+                    <h3>プリミティヴィズム</h3>
+                    <p>西洋の視点からみて「プリミティブ」とされる芸術に触発されたアート。アフリカの彫刻や南太平洋の芸術品に加え、先史時代やヨーロッパの土着の芸術が、近代ヨーロッパの多くのアーティストを魅了した。プリミティヴィズムは単純化された形と明るい色彩を特徴とする。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AA%E3%83%9F%E3%83%86%E3%82%A3%E3%83%B4%E3%82%A3%E3%82%B9%E3%83%A0" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+            </section>
+
+            <section id="ma-gyo" class="kana-section">
+                <h2 class="section-title">ま行</h2>
+                <article class="term-entry" id="mirai-ha">
+                    <h3>未来派</h3>
+                    <p>1909年にイタリア人詩人・小説家のフィリッポ・トンマーゾ・マリネッティの始めた芸術・文学運動。近代の生活のダイナミズム、エネルギー、騒音を表現し、機械、暴力、未来を賛美した。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E6%9C%AA%E6%9D%A5%E6%B4%BE" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="mexico-hekiga-undo">
+                    <h3>メキシコ壁画運動</h3>
+                    <p>1910年〜1917年のメキシコ革命後、政府資金によりパブリックアートとして始まった。市民を広く教育する目的で、メキシコの歴史を描写した壁画が作られた。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E5%A3%81%E7%94%BB%E9%81%8B%E5%8B%95" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="minimalism">
+                    <h3>ミニマリズム</h3>
+                    <p>控えめで厳密な抽象絵画のスタイル。感情を表現せず、客観的な構成を持つたないことを特徴とする。20世紀半ばに発生し、1960年代と1970年代に盛衰した。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%8B%E3%83%9E%E3%83%AB%E3%83%BB%E3%82%A2%E3%83%BC%E3%83%88" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+            </section>
+
+            <section id="ya-gyo" class="kana-section">
+                <h2 class="section-title">や行</h2>
+                <article class="term-entry" id="yba">
+                    <h3>YBA: ヤング・ブリティッシュ・アーティスト</h3>
+                    <p>1988年ロンドンでダミアン・ハーストの主宰により開催された「フリーズ（Freeze）展」で初めて共同で作品を発表した当時のイギリスの若手アーティストたちに付けられた名称。その多くは、ロンドン大学ゴールドスミス・カレッジ美術学部ファインアート課程を卒業したばかりの若者だった。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%A4%E3%83%B3%E3%82%B0%E3%83%BB%E3%83%96%E3%83%AA%E3%83%86%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%BB%E3%82%A2%E3%83%BC%E3%83%86%E3%82%A3%E3%82%B9%E3%83%88" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+            </section>
+
+            <section id="ra-gyo" class="kana-section">
+                <h2 class="section-title">ら行</h2>
+                <article class="term-entry" id="land-art">
+                    <h3>ランド・アート</h3>
+                    <p>戸外の環境を用いて大規模に制作されるアート。環境問題や人間と自然の関係についてアーティストの意思表明でもある。</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%A2%E3%83%BC%E3%83%88" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+                <article class="term-entry" id="readymade">
+                    <h3>レディ・メイド</h3>
+                    <p>マルセル・デュシャンが初めて用いた用語で、既製品から作った芸術作品を指す。既製品にアーティストが手を加えてレディ・メイドのアート作品にすることもある。（ファウンド・オブジェクトも参照）</p>
+                    <p class="external-link-container"><a href="https://ja.wikipedia.org/wiki/%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BB%E3%83%A1%E3%82%A4%E3%83%89" target="_blank" rel="noopener noreferrer" class="external-link">関連情報を見る</a></p>
+                </article>
+            </section>
+
+        </main>
+    </div>
+    
+    <div class="footer-buttons">
+        <a href="#page-top" id="back-to-list-btn">一覧へ戻る</a>
+    </div>
+
+    <div class="footer-banner">
+        <img src="image/Art-Terms1.jpg" alt="Art Terms Footer" class="footer-image">
+        <footer>
+            <p>© 2025 Art Glossary. Created by Lambertye.</p>
+        </footer>
+    </div>
+
+    <a href="#page-top" id="scroll-to-top-btn">↑</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- ELEMENTS ---
+            const header = document.querySelector('.main-header');
+            const searchInput = document.getElementById('searchInput');
+            const scrollTopBtn = document.getElementById('scroll-to-top-btn');
+
+            // --- STATE ---
+            let headerHeight = 0;
+
+            // --- FUNCTIONS ---
+            function updateHeaderHeight() {
+                headerHeight = header.offsetHeight;
+            }
+
+            function toggleScrollTopBtn() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.style.display = 'flex';
+                } else {
+                    scrollTopBtn.style.display = 'none';
+                }
+            }
+
+            function showAllEntries() {
+                document.querySelectorAll('.term-entry, .kana-section').forEach(el => {
+                    el.style.display = '';
+                });
+            }
+
+            function filterTerms() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                
+                showAllEntries(); // Always show everything before filtering
+
+                if (searchTerm === '') {
+                    return; // If search is empty, all are now visible
+                }
+
+                document.querySelectorAll('.term-entry').forEach(entry => {
+                    const termTitle = entry.querySelector('h3').textContent.toLowerCase();
+                    const termDescription = entry.querySelector('p').textContent.toLowerCase();
+                    if (!termTitle.includes(searchTerm) && !termDescription.includes(searchTerm)) {
+                        entry.style.display = 'none';
+                    }
+                });
+
+                document.querySelectorAll('.kana-section').forEach(section => {
+                    if (section.querySelectorAll('.term-entry:not([style*="display: none"])').length === 0) {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+
+            function scrollToTarget(targetId) {
+                if (targetId === 'page-top') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = targetPosition - headerHeight;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            // --- EVENT LISTENERS ---
+            window.addEventListener('resize', updateHeaderHeight);
+            window.addEventListener('scroll', toggleScrollTopBtn);
+            searchInput.addEventListener('input', filterTerms);
+
+            document.addEventListener('click', function(e) {
+                const anchor = e.target.closest('a[href^="#"]');
+                if (!anchor) return;
+
+                e.preventDefault();
+                const targetId = anchor.getAttribute('href').substring(1);
+
+                // If a link is clicked, always reset the search state first.
+                if (searchInput.value !== '') {
+                    searchInput.value = '';
+                    showAllEntries();
+                }
+                
+                // Now, scroll to the intended target.
+                scrollToTarget(targetId);
+            });
+
+            searchInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    const searchTerm = searchInput.value.toLowerCase().trim();
+                    let exactMatch = null;
+                    const visibleEntries = document.querySelectorAll('.term-entry:not([style*="display: none"])');
+
+                    for(const entry of visibleEntries) {
+                        const termTitle = entry.querySelector('h3').textContent.toLowerCase();
+                        if (termTitle === searchTerm) {
+                            exactMatch = entry;
+                            break;
+                        }
+                    }
+
+                    const targetEntry = exactMatch || (visibleEntries.length > 0 ? visibleEntries[0] : null);
+
+                    if (targetEntry) {
+                        scrollToTarget(targetEntry.id);
+                    }
+                }
+            });
+            
+            // Initial setup
+            updateHeaderHeight();
+        });
+    </script>
+
+</body>
+</html>

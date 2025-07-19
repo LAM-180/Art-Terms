@@ -1,0 +1,27 @@
+# macOS の隠しファイル
+.DS_Store
+
+# VS Code の設定ファイル (通常は共有しない)
+.vscode/
+
+# Node.js 関連のフォルダー (もし今後使う場合)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 一時ファイルやバックアップファイル
+*.bak
+*~
+*.tmp
+*.log
+
+# 圧縮ファイル (もしプロジェクト内に一時的に置いている場合)
+*.zip
+*.tar.gz
+*.rar
+
+# その他の隠しファイルやシステムファイル
+.localized
+.Trashes
+.Spotlight-V100
+.fseventsd
